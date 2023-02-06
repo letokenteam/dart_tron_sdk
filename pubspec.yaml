@@ -1,0 +1,18 @@
+name: tron_sdk
+description: Crypto wallet package for Bitcoin, Ethereum and Tron written in pure Dart.
+version: 0.0.7
+repository: https://github.com/letokenteam/dart_tron_sdk
+homepage: https://github.com/letokenteam/dart_tron_sdk
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  pointycastle: ^3.6.2
+  convert: ^3.0.1
+  eip55: ^1.0.2
+  sec: ^1.0.1
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.22.0
