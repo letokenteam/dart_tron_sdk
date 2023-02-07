@@ -70,6 +70,7 @@ class Bitcoin extends Coin {
 
     return result;
   }
+
 }
 
 class BitcoinBech32 extends Coin {
@@ -111,6 +112,7 @@ class BitcoinBech32 extends Coin {
 
     return result;
   }
+
 }
 
 class Ethereum extends Coin {
@@ -157,6 +159,7 @@ class Ethereum extends Coin {
 
     return result;
   }
+
 }
 
 class Tron extends Coin {
@@ -183,6 +186,14 @@ class Tron extends Coin {
     return end;
   }
 
+  List<int> createAddressForU(PublicKey publicKey) {
+    var input = Uint8List.fromList(publicKey.value.skip(1).toList());
+    var address = KeccakDigest(256).process(input);
+
+    final addr = address.skip(address.length - 20).toList();
+    return addr;
+  }
+
   @override
   Uint8List generateSignature(PrivateKey privateKey, Uint8List message) {
     final signature = EC.secp256k1.generateSignature(privateKey.value, message);
@@ -204,4 +215,5 @@ class Tron extends Coin {
 
     return result;
   }
+
 }

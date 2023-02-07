@@ -13,6 +13,7 @@ export 'src/bip39/bip39.dart';
 export 'src/bech32/bech32.dart';
 export 'src/bech32/segwit.dart';
 export 'src/bech32/exceptions.dart';
+export 'src/base58.dart';
 
 const zpub = [0x04, 0xb2, 0x47, 0x46];
 const zprv = [0x04, 0xb2, 0x43, 0x0c];
